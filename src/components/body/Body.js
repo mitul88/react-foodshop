@@ -7,7 +7,7 @@ import Contact from "./Contact";
 const Body = () => {
     return (
         <div>
-            <Menu />
+
         </div>
     )
 }
