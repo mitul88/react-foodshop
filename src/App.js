@@ -8,7 +8,6 @@ import store from './redux/store';
 
 
 function App() {
-  console.log(store.getState())
   return (
     <div className="App">
       <Provider store={store}>

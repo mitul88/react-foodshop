@@ -3,7 +3,7 @@ import Menu from "./Menu";
 import Home from "./Home";
 import About from "./About";
 import Contact from "./Contact";
-import { Route, Redirect } from "react-router-dom";
+import { Route } from "react-router-dom";
 import { Routes } from "react-router-dom";
 
 import { Navigate } from "react-router-dom";
