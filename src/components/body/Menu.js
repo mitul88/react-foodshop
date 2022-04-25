@@ -29,6 +29,7 @@ class Menu extends Component {
     }
 
     render = () => {
+        document.title="Menu";
         const menu = this.state.dishes.map(item=> {
             return (
                 <div key={item.id} className="col-sm-12 col-md-4 col-lg-3">
