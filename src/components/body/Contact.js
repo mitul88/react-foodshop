@@ -16,6 +16,23 @@ class Contact extends Component {
             contactType: "phone",
             message: ""
         }
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleInputChange = event => {
+        const value = event.type.target.type === "checkbox" ? event.target.checked : event.target.value;
+
+        const name = event.target.name;
+        this.setState({
+            [name]: value
+        })
+    }
+
+    handleSubmit = event => {
+        console.log(this.state);
+        event.preventDefault();
     }
 
     render() {
