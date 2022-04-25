@@ -9,12 +9,21 @@ import { CardColumns, Modal, ModalBody, ModalFooter, Button, Card} from 'reactst
 class Menu extends Component {
     state = {
         dishes : DISHES,
-        selectedDish: null
+        selectedDish: null,
+        modalOpen: false
     }
 
     onDishSelect = dish => {
-        console.log(dish)
-        this.setState({selectedDish: dish})
+        this.setState({
+            selectedDish: dish,
+            modalOpen: !this.state.modalOpen
+        })
+    }
+
+    toogleModal = () => {
+        this.setState({
+            modalOpen: !this.state.modalOpen
+        })
     }
 
     render = () => {
@@ -38,12 +47,12 @@ class Menu extends Component {
             <div className="container">
                 <div className="row">
                     {menu}
-                    <Modal>
+                    <Modal isOpen={this.state.modalOpen}>
                         <ModalBody>
                             {dishDetail}
                         </ModalBody>
                         <ModalFooter>
-                            <Button color="secondary">
+                            <Button onClick={this.toogleModal} color="secondary">
                                 Close
                             </Button>
                         </ModalFooter>
