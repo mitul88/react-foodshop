@@ -3,6 +3,8 @@ import DISHES from "../../data/dishes";
 import MenuItem from "./MenuItem";
 import DishDetail from "./DishDetail";
 
+import { CardColumns, Modal, ModalBody, ModalFooter, Button, Card} from 'reactstrap';
+
 
 class Menu extends Component {
     state = {
@@ -18,11 +20,14 @@ class Menu extends Component {
     render = () => {
         const menu = this.state.dishes.map(item=> {
             return (
-                <MenuItem 
-                    dish={item} 
-                    key={item.id}
-                    onDishSelect={()=>this.onDishSelect(item)} 
-                />
+                <div className="col-sm-12 col-md-4 col-lg-3">
+                    <MenuItem 
+                        dish={item} 
+                        key={item.id}
+                        onDishSelect={()=>this.onDishSelect(item)} 
+                    />
+                </div>
+
             )
         })
         let dishDetail = null;
@@ -32,12 +37,17 @@ class Menu extends Component {
         return (
             <div className="container">
                 <div className="row">
-                    <div className="col-6">
-                        {menu}
-                    </div>
-                    <div className="col-6">
-                        {dishDetail}
-                    </div>
+                    {menu}
+                    <Modal>
+                        <ModalBody>
+                            {dishDetail}
+                        </ModalBody>
+                        <ModalFooter>
+                            <Button color="secondary">
+                                Close
+                            </Button>
+                        </ModalFooter>
+                    </Modal>
                 </div>
             </div>
         )

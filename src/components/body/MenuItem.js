@@ -8,10 +8,10 @@ const MenuItem = (props) => {
             <Card style={{margin: "10px"}}>
                 <CardBody>
                     <CardImg 
-                        width="100%" 
+                        width="100%"
                         alt={props.dish.name} 
                         src={props.dish.image} 
-                        style={{opacity: "0.5"}} />
+                        style={{opacity: "0.5", minHeight: "180px", maxHeight: "180px"}} />
                     <CardImgOverlay>
                         <CardTitle 
                             style={{cursor: "pointer"}}
