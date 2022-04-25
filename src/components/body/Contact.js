@@ -1,7 +1,6 @@
-import { Button } from 'bootstrap';
 import React, {Component} from 'react';
 
-import { Buttonm, Form, FormGroup, Label, Input, Col, Spinner } from 'reactstrap';
+import { Button, Form, FormGroup, Label, Input, Col } from 'reactstrap';
 
 
 class Contact extends Component {
@@ -22,11 +21,11 @@ class Contact extends Component {
     render() {
         return (
             <div className='container'>
-                <div className='row row-content'>
-                    <div className='col-12 text-center'>
+                <div className='row row-content' style={{paddingLeft: "20px", textAlign: "left"}}>
+                    <div className='col-12'>
                         <h3>Send us your feedback</h3>
                     </div>
-                    <div className='col-12'>
+                    <div className='col-12 col-md-7'>
                         <Form>
                             <FormGroup row>
                                 <Label htmlFor="firstname" md={2}>First Name</Label>
@@ -35,7 +34,7 @@ class Contact extends Component {
                                         type='text' 
                                         name="firstname" 
                                         placeholder='First Name' 
-                                        value={this.state.firstname} />
+                                        defaultValue={this.state.firstname} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -45,7 +44,7 @@ class Contact extends Component {
                                         type='text' 
                                         name="lastname" 
                                         placeholder='Your Last Name' 
-                                        value={this.state.lastname} />
+                                        defaultValue={this.state.lastname} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -55,7 +54,7 @@ class Contact extends Component {
                                         type='text' 
                                         name="phone" 
                                         placeholder='Your Phone Number' 
-                                        value={this.state.phone} />
+                                        defaultValue={this.state.phone} />
                                 </Col>
                             </FormGroup>
                             <FormGroup row>
@@ -65,34 +64,32 @@ class Contact extends Component {
                                         type='email' 
                                         name="email" 
                                         placeholder='Your Email Address' 
-                                        value={this.state.email} />
+                                        defaultValue={this.state.email} />
                                 </Col>
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup row>
                                 <Col md={{size: 6, offset:2}}>
                                     <FormGroup check>
                                         <Label check>
                                             <Input 
                                                 type='checkbox' 
                                                 name="agree" 
-                                                checked={this.state.agree} />
+                                                defaultChecked={this.state.agree} />
                                         <strong>May we contact you ?</strong>
                                         </Label>
                                     </FormGroup>
                                 </Col>
                                 <Col md={{size:3, offset:1}}>
-                                    <Input type="select" name="contactType" value={this.state.contactType}>
+                                    <Input type="select" name="contactType" defaultValue={this.state.contactType}>
                                         <option>Phone</option>
                                         <option>Email</option>
                                     </Input>
                                 </Col>
                             </FormGroup>
-                            <FormGroup>
+                            <FormGroup row>
                                 <Label htmlFor='message' md={2}>Your Feedback</Label>
                                 <Col md={10}>
-                                    <Input type="textarea" name="message" value={this.state.message} rows="12">
-
-                                    </Input>
+                                    <Input type="textarea" name="message" defaultValue={this.state.message} rows="12" />
                                 </Col>
                             </FormGroup>
                             <FormGroup>
