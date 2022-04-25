@@ -29,10 +29,9 @@ class Menu extends Component {
     render = () => {
         const menu = this.state.dishes.map(item=> {
             return (
-                <div className="col-sm-12 col-md-4 col-lg-3">
+                <div key={item.id} className="col-sm-12 col-md-4 col-lg-3">
                     <MenuItem 
                         dish={item} 
-                        key={item.id}
                         onDishSelect={()=>this.onDishSelect(item)} 
                     />
                 </div>
