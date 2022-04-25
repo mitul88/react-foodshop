@@ -6,6 +6,6 @@ const initialState = {
     comments: COMMENTS,
 }
 
-const reducer = (state, action) => {
+export const reducer = (state = initialState, action) => {
     return state;
 }
