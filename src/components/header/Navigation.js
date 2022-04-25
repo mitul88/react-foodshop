@@ -22,7 +22,7 @@ class Navigation extends Component  {
                 {/* <div className="container"> */}
                 <NavbarToggler onClick={this.navToggle} />
                     <NavbarBrand href="/">
-                        Bohubrihi Restaurant
+                        Dhansiri Restaurant
                     </NavbarBrand>
                     <Collapse isOpen={this.state.isNavOpen} navbar>
                         <Nav className="ml-auto" navbar>
