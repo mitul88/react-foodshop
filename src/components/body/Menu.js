@@ -45,7 +45,7 @@ class Menu extends Component {
             const comments = this.state.comments.filter(comment => {
                 return comment.dishId === this.state.selectedDish.id
             })
-            dishDetail= <DishDetail dish={this.state.selectedDish} />
+            dishDetail= <DishDetail dish={this.state.selectedDish} comments={comments} />
         }
         return (
             <div className="container">
