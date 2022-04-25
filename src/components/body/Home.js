@@ -9,6 +9,13 @@ const mapStateToProps = state => {
 
 
 class Home extends Component {
+    componentDidMount() {
+        console.log("home props:", this.props)
+        this.props.dispatch({
+            type: "TEST"
+        })
+    }
+
     render() {
         document.title="Home";
         return (

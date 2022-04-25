@@ -7,5 +7,6 @@ const initialState = {
 }
 
 export const Reducer = (state = initialState, action) => {
+    console.log("reducer :", action)
     return state;
 }
