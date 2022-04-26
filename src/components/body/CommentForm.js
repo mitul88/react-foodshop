@@ -10,24 +10,45 @@ class CommentForm extends Component {
             comment:"",
             rating: ''
         }
+
+        this.handleInputChange=this.handleInputChange.bind(this);
+        this.handleSubmit=this.handleSubmit.bind(this);
+    }
+
+    handleInputChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = event => {
+        console.log(this.state);
+        this.setState({
+            author:"",
+            comment:"",
+            rating: ''
+        });
+        event.preventDefault();
     }
 
     render() {
         return (
             <div>
-                <Form>
+                <Form onSubmit={this.handleSubmit}>
                     <Input
                         type="text"
                         name="author"
-                        defaultValue={this.state.author}
+                        value={this.state.author}
                         placeholder="Your Name"
                         required
+                        onChange={this.handleInputChange}
                     />
                     <br />
                     <Input 
                         type="select"
                         name="rating"
-                        defaultValue={this.state.rating}
+                        value={this.state.rating}
+                        onChange={this.handleInputChange}
                     >
                         <option>1</option>
                         <option>2</option>
@@ -39,8 +60,9 @@ class CommentForm extends Component {
                     <Input 
                         type="textarea"
                         name="comment"
-                        defaultValue={this.state.comment}
+                        value={this.state.comment}
                         placeholder="Your Comment"
+                        onChange={this.handleInputChange}
                     />
                     <br />
                     <Button type="submit">Submit Comment</Button>
