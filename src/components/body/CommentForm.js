@@ -1,8 +1,8 @@
-import React from "react";
+import React, { Component } from "react";
 import {Form, Button, Input} from "reactstrap";
 
 
-class CommentForm extends Componenet {
+class CommentForm extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -27,7 +27,7 @@ class CommentForm extends Componenet {
                     <Input 
                         type="select"
                         name="rating"
-                        value={this.state.rating}
+                        defaultValue={this.state.rating}
                     >
                         <option>1</option>
                         <option>2</option>
@@ -49,3 +49,5 @@ class CommentForm extends Componenet {
         )
     }
 }
+
+export default CommentForm;
