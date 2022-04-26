@@ -38,7 +38,7 @@ class CommentForm extends Component {
                     <Input
                         type="text"
                         name="author"
-                        value={this.state.author}
+                        defaultValue={this.state.author}
                         placeholder="Your Name"
                         required
                         onChange={this.handleInputChange}
@@ -47,7 +47,7 @@ class CommentForm extends Component {
                     <Input 
                         type="select"
                         name="rating"
-                        value={this.state.rating}
+                        defaultValue={this.state.rating}
                         onChange={this.handleInputChange}
                     >
                         <option>1</option>
@@ -60,7 +60,7 @@ class CommentForm extends Component {
                     <Input 
                         type="textarea"
                         name="comment"
-                        value={this.state.comment}
+                        defaultValue={this.state.comment}
                         placeholder="Your Comment"
                         onChange={this.handleInputChange}
                     />
