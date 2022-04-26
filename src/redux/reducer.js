@@ -7,7 +7,7 @@ const initialState = {
 }
 
 export const Reducer = (state = initialState, action) => {
-
+    console.log("From reducer :",action.payload)
 
     return state;
 }
