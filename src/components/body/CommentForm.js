@@ -30,7 +30,8 @@ class CommentForm extends Component {
             payload: {
                 dishId: this.props.dishId,
                 author: this.state.author,
-                comment: this.state.comment
+                comment: this.state.comment,
+                rating: this.state.rating
             }
         })
         this.setState({
