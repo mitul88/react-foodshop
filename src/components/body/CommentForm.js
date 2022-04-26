@@ -10,7 +10,7 @@ class CommentForm extends Component {
         this.state = {
             author:"",
             comment:"",
-            rating: ''
+            rating: ""
         }
 
         this.handleInputChange=this.handleInputChange.bind(this);
