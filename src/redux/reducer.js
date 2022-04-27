@@ -4,22 +4,27 @@ import DISHES from "../data/dishes";
 import COMMENTS from "../data/comments";
 
 const dishReducer = (dishState = DISHES, action) => {
-    return dishState;
+    switch(action.type) {
+        default:
+            return dishState;
+    }
 }
 
 const commentReducer = (commentState = COMMENTS, action) => {
-    if(action.type === "ADD_COMMENT") {
-        let comment = action.payload;
-        comment.id = commentState.length;
-        comment.date = new Date().toDateString();
-        
-        console.log(comment);
+    switch(action.type) {
+        case 'ADD_COMMENT':
+            let comment = action.payload;
+            comment.id = commentState.length;
+            comment.date = new Date().toDateString();
+            
+            console.log(comment);
+    
+            return commentState.concat(comment)
 
-        return commentState.concat(comment)
-        
+        default: 
+            return commentState
+    
     }
-
-    return commentState;
 }
 
 export const Reducer = combineReducers({
