@@ -6,10 +6,18 @@ import { Modal, ModalBody, ModalFooter, Button } from 'reactstrap';
 
 import { connect } from "react-redux";
 
+import { addComment } from "../../redux/actionCreators";
+
 const mapStateToProps = state => {
     return {
         dishes: state.dishes,
         comments: state.comments,
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        addComment:(dishId, author, comment, rating) => dispatch(addComment(dishId, author, comment, rating))
     }
 }
 
@@ -50,7 +58,7 @@ class Menu extends Component {
             const comments = this.props.comments.filter(comment => {
                 return comment.dishId === this.state.selectedDish.id
             })
-            dishDetail= <DishDetail dish={this.state.selectedDish} comments={comments} />
+            dishDetail= <DishDetail dish={this.state.selectedDish} comments={comments} addComment={this.props.addComment} />
         }
         return (
             <div className="container">
@@ -72,4 +80,4 @@ class Menu extends Component {
     }
 }
 
-export default connect(mapStateToProps)(Menu);
+export default connect(mapStateToProps, mapDispatchToProps)(Menu);

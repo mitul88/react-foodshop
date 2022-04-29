@@ -1,21 +1,8 @@
 import React, { Component } from "react";
 import {Form, Button, Input} from "reactstrap";
 
-import { connect } from "react-redux";
 
-const mapDispatchToProps = dispatch => {
-    return {
-        addComment:(dishId, author, comment, rating) => dispatch({
-            type: "ADD_COMMENT",
-            payload: {
-                dishId: dishId,
-                author: author,
-                comment: comment,
-                rating: rating
-            }
-        })
-    }
-}
+
 
 class CommentForm extends Component {
     constructor(props) {
@@ -88,4 +75,4 @@ class CommentForm extends Component {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CommentForm);
+export default CommentForm;
